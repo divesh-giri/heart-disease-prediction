@@ -1,0 +1,109 @@
+  
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/style.css">  
+    <title>Heart Disease Prediction</title>
+  </head>
+  
+  <body>
+    
+<div class="container main">
+  <div class="jumbotron" id="holder">
+     <br>
+       <center><b><h2 style="color:#FF0000";>{{ prediction_text}}</h2></b></center> 
+     <br>
+     <br>
+    <center><h1 class='main_heading'> Heart Disease Prediction Model</h1></center>
+    <p>This web based application can be used to predict whether a person has heart disease or not. [Note that this model is 92% accurate]</p>
+    <br>
+    <div class="instructions">
+      <h2>Instructions: </h2>
+      <p>1. Please Enter values for the following fields</p>
+      <p>2. click predict </p>
+    </div>
+
+    <form class="form-horizontal" action="{{ url_for('predict')}}"method="post">
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type= "text" name="sysBP" placeholder="Systolic Blood Pressure" required="required" />
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="glucose" placeholder="Glucose" required="required" />
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="age" placeholder="Age" required="required" />
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="cigsPerDay" placeholder="Cigarettes Per Day" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="totChol" placeholder="Total Cholestrol Level" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="diaBP" placeholder="Diastolic Blood Pressure" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="prevalentHyp" placeholder="Whether the patient was Hyper Tensive (0 for No, 1 for Yes)" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="male" placeholder="Gender (0 for Female, 1 for male)" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="BPMeds" placeholder="Whether or not Person was on BP medication(0 for no, 1 for yes)" required="required" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input  class="form-control" type="text" name="diabetes" placeholder="Whether or not the patient had diabetes(0 for no, 1 for yes)" required="required" />
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+         <center><button type="submit" class="button btn btn-default">PREDICT</button><center/>
+        </div>
+      </div>
+    </form>
+
+    
+
+    <h2 class="result"></h2>
+  </div>
+  </div>
+
+  </body>
+</html>
